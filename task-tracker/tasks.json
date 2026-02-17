@@ -1,0 +1,17 @@
+[
+  {
+    "id": 2,
+    "name": "walk",
+    "status": "in progress"
+  },
+  {
+    "id": 1,
+    "name": "work",
+    "status": "to-do"
+  },
+  {
+    "id": 3,
+    "name": "buy groceries",
+    "status": "done"
+  }
+]
