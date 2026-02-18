@@ -16,5 +16,6 @@ public class Main{
         m.listTaskTodo();
         m.listTaskInProgress();
         m.saveTask();
+        m.saveToJson("tasks.json");
     }
 }
