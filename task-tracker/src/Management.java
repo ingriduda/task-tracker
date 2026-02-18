@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Management {
     private ArrayList<Task> tasks;
@@ -62,6 +64,26 @@ public class Management {
             if (t.getStatus().equals("in progress")) {
                 System.out.println(t);
             }
+        }
+    }
+    public void saveToJson(String filename) {
+        try (FileWriter writer = new FileWriter(filename)) {
+
+            writer.write("[\n");
+
+            for (int i = 0; i < tasks.size(); i++) {
+                writer.write(tasks.get(i).toJson());
+
+                if (i < tasks.size() - 1) {
+                    writer.write(",\n");
+                }
+            }
+
+            writer.write("\n]");
+            System.out.println("Data saved successfully!");
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
